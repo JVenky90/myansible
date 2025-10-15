@@ -1,0 +1,3 @@
+---
+ webserverpkg_debian : "apache2"
+ webserverpkg_redhat : "httpd"

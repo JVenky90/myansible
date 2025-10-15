@@ -1,28 +1,28 @@
 ---
-- hosts: all
+- hosts: webservergroup
   become: yes
   gather_facts: yes
   tasks:
   - name: i want to install a apache2 webserver in debian node
     apt:
-      name: apache2
+      name: {{webserverpkg_debian}}
       state: present
     when: ansible_os_family == "Debian"
 
   - name: i want to start webserver on debian node
     service:
-      name: apache2
+      name: {{webserverpkg_debian}}
       state: started
     when: ansible_os_family == "Debian"
 
   - name: i want to install a apache2 webserver in Redhat node
     dnf:
-      name: httpd
+      name: {{webserverpkg_redhat}}
       state: present
     when: ansible_os_family == "RedHat"
 
   - name: i want to start webserver on RedHat node
     service:
-      name: httpd
+      name: {{webserverpkg_redhat}}
       state: started
     when: ansible_os_family == "RedHat"
