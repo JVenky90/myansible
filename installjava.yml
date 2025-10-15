@@ -1,0 +1,16 @@
+---
+- hosts : webservergroup
+  become : yes
+  gather_facts : yes
+  tasks:
+  - name : i want to install java on debian
+    apt : 
+      name : "{{javainstall_debian}}"
+      state : present
+    when : ansible_os_family == "Debian"
+
+  - name : i want to instll java on RedHat 
+    dnf :
+      name : "{{javainstall_redhat}}"
+      state : present
+    when : ansible_os_family == "RedHat"
