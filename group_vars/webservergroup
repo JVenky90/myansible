@@ -2,4 +2,4 @@
  webserverpkg_debian : "apache2"
  webserverpkg_redhat : "httpd"
  javainstall_debian : openjdk-21-jdk
- javainstall_redhat : java-21-amazon-corretto-devel
+ 
