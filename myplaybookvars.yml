@@ -13,3 +13,5 @@
   - name : i want to debug value of var01
     debug:
       msg: "{{var01}}"
+  - name : i want to execute direct linux command
+    command : hotstname -f
