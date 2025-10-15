@@ -5,24 +5,24 @@
   tasks:
   - name: i want to install a apache2 webserver in debian node
     apt:
-      name: {{webserverpkg_debian}}
+      name: {{ webserverpkg_debian }}
       state: present
     when: ansible_os_family == "Debian"
 
   - name: i want to start webserver on debian node
     service:
-      name: {{webserverpkg_debian}}
+      name: {{ webserverpkg_debian }}
       state: started
     when: ansible_os_family == "Debian"
 
   - name: i want to install a apache2 webserver in Redhat node
     dnf:
-      name: {{webserverpkg_redhat}}
+      name: {{ webserverpkg_redhat }}
       state: present
     when: ansible_os_family == "RedHat"
 
   - name: i want to start webserver on RedHat node
     service:
-      name: {{webserverpkg_redhat}}
+      name: {{ webserverpkg_redhat }}
       state: started
     when: ansible_os_family == "RedHat"
